@@ -220,7 +220,7 @@
         <input type="number" id="toets5" placeholder="Masukkan nilai total TOETS 4">
     </div>
     <div class="form-group">
-        <button onclick="hitungNilai('ws5', 'luister5', 'lezen5', 'result5')">Submit</button>
+        <button onclick="hitungNilai5('ws5', 'luister5', 'lezen5', 'toets5', 'result5')">Submit</button>
     </div>
     <div class="result" id="result5"></div>
 </div>
@@ -231,9 +231,9 @@
         const ws5 = parseFloat(document.getElementById(ws5Id).value) || 0;
         const luister5 = parseFloat(document.getElementById(luister5Id).value) || 0;
         const lezen5 = parseFloat(document.getElementById(lezen5Id).value) || 0;
-
+        const toets5 = parseFloat(document.getElementById(toets5Id).value) || 0;
         // Kalkulasi sesuai aturan
-        const total = (ws5) + (luister5) + (lezen5) + (toets5Id) / 4;
+        const total = (ws5) + (luister5) + (lezen5) + (toets5) / 4;
 
         // Tentukan hasil
         let grade = "Lulus";
