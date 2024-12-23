@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilai Toets Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFA500; /* Oranye */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto; /* Tambahkan margin antar container */
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h3 {
+            text-align: center;
+            color: #444;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            flex: 1;
+        }
+        .form-group input {
+            flex: 2;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group button {
+            flex: 0.5;
+            background-color: #ff7043;
+            border: none;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #d6542a;
+        }
+        .result {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>TOETS 1</h3>
+        <div class="form-group">
+            <label for="ws1">WS/Gram:</label>
+            <input type="number" id="ws1" placeholder="Masukkan nilai WS/Gram">
+        </div>
+        <div class="form-group">
+            <label for="luister1">Luister:</label>
+            <input type="number" id="luister1" placeholder="Masukkan nilai Luister">
+        </div>
+        <div class="form-group">
+            <label for="lezen1">Lezen:</label>
+            <input type="number" id="lezen1" placeholder="Masukkan nilai Lezen">
+        </div>
+        <div class="form-group">
+            <button onclick="hitungNilai('ws1', 'luister1', 'lezen1', 'result1')">Submit</button>
+        </div>
+        <div class="result" id="result1"></div>
+    </div>
+
+    <div class="container">
+        <h3>TOETS 2</h3>
+        <div class="form-group">
+            <label for="ws2">WS/Gram:</label>
+            <input type="number" id="ws2" placeholder="Masukkan nilai WS/Gram">
+        </div>
+        <div class="form-group">
+            <label for="luister2">Luister:</label>
+            <input type="number" id="luister2" placeholder="Masukkan nilai Luister">
+        </div>
+        <div class="form-group">
+            <label for="lezen2">Lezen:</label>
+            <input type="number" id="lezen2" placeholder="Masukkan nilai Lezen">
+        </div>
+        <div class="form-group">
+            <button onclick="hitungNilai('ws2', 'luister2', 'lezen2', 'result2')">Submit</button>
+        </div>
+        <div class="result" id="result2"></div>
+    </div>
+
+    <div class="container">
+        <h3>TOETS 3</h3>
+        <div class="form-group">
+            <label for="ws3">WS/Gram:</label>
+            <input type="number" id="ws3" placeholder="Masukkan nilai WS/Gram">
+        </div>
+        <div class="form-group">
+            <label for="luister3">Luister:</label>
+            <input type="number" id="luister3" placeholder="Masukkan nilai Luister">
+        </div>
+        <div class="form-group">
+            <label for="lezen3">Lezen:</label>
+            <input type="number" id="lezen3" placeholder="Masukkan nilai Lezen">
+        </div>
+        <div class="form-group">
+            <button onclick="hitungNilai('ws3', 'luister3', 'lezen3', 'result3')">Submit</button>
+        </div>
+        <div class="result" id="result3"></div>
+    </div>
+
+    <script>
+        function hitungNilai(wsId, luisterId, lezenId, resultId) {
+            const ws = parseFloat(document.getElementById(wsId).value) || 0;
+            const luister = parseFloat(document.getElementById(luisterId).value) || 0;
+            const lezen = parseFloat(document.getElementById(lezenId).value) || 0;
+
+            // Kalkulasi sesuai aturan
+            const total = (ws * 0.5) + (luister * 0.25) + (lezen * 0.25);
+
+            // Tentukan hasil
+            let grade = "Lulus";
+            if (total < 55) {
+                grade = "Tidak Lulus (D)";
+            }
+
+            // Tampilkan hasil
+            document.getElementById(resultId).innerHTML = `Total: ${total.toFixed(2)} (${grade})`;
+        }
+    </script>
+
+<div class="container">
+    <h3>TOETS 4</h3>
+    <div class="form-group">
+        <label for="ws4">WS/Gram:</label>
+        <input type="number" id="ws4" placeholder="Masukkan nilai WS/Gram">
+    </div>
+    <div class="form-group">
+        <label for="luister4">Luister:</label>
+        <input type="number" id="luister4" placeholder="Masukkan nilai Luister">
+    </div>
+    <div class="form-group">
+        <label for="lezen4">Lezen:</label>
+        <input type="number" id="lezen4" placeholder="Masukkan nilai Lezen">
+    </div>
+    <div class="form-group">
+        <button onclick="hitungNilai('ws4', 'luister4', 'lezen4', 'result4')">Submit</button>
+    </div>
+    <div class="result" id="result4"></div>
+</div>
+
+<script>
+    function hitungNilai(wsId, luisterId, lezenId, resultId) {
+        const ws = parseFloat(document.getElementById(wsId).value) || 0;
+        const luister = parseFloat(document.getElementById(luisterId).value) || 0;
+        const lezen = parseFloat(document.getElementById(lezenId).value) || 0;
+
+        // Kalkulasi sesuai aturan
+        const total = (ws * 0.5) + (luister * 0.25) + (lezen * 0.25);
+
+        // Tentukan hasil
+        let grade = "Lulus";
+        if (total < 55) {
+            grade = "Tidak Lulus (D)";
+        }
+
+        // Tampilkan hasil
+        document.getElementById(resultId).innerHTML = `Total: ${total.toFixed(2)} (${grade})`;
+    }
+</script>
+
+<script>
+    function hitungNilai(wsId, luisterId, lezenId, resultId) {
+        const ws = parseFloat(document.getElementById(wsId).value) || 0;
+        const luister = parseFloat(document.getElementById(luisterId).value) || 0;
+        const lezen = parseFloat(document.getElementById(lezenId).value) || 0;
+
+        // Kalkulasi sesuai aturan
+        const total = (ws * 0.5) + (luister * 0.25) + (lezen * 0.25);
+
+        // Tentukan hasil
+        let grade = "Lulus";
+        if (total < 55) {
+            grade = "Tidak Lulus (D)";
+        }
+
+        // Tampilkan hasil
+        document.getElementById(resultId).innerHTML = `Total: ${total.toFixed(2)} (${grade})`;
+    }
+</script>
+
+<div class="container">
+    <h3>Nilai Akhir</h3>
+    <div class="form-group">
+        <label for="ws5">Total TOETS 1:</label>
+        <input type="number" id="ws5" placeholder="Masukkan nilai total TOETS 1">
+    </div>
+    <div class="form-group">
+        <label for="luister5">Total TOETS 2:</label>
+        <input type="number" id="luister5" placeholder="Masukkan nilai total TOETS 2">
+    </div>
+    <div class="form-group">
+        <label for="lezen5">Total TOETS 3:</label>
+        <input type="number" id="lezen5" placeholder="Masukkan nilai total TOETS 3">
+    </div>
+    <div class="form-group">
+        <label for="toets5">Total TOETS 4:</label>
+        <input type="number" id="toets5" placeholder="Masukkan nilai total TOETS 4">
+    </div>
+    <div class="form-group">
+        <button onclick="hitungNilai('ws5', 'luister5', 'lezen5', 'result5')">Submit</button>
+    </div>
+    <div class="result" id="result5"></div>
+</div>
+
+<script>
+    
+    function hitungNilai5(ws5Id, luister5Id, lezen5Id, toets5Id, resultId) {
+        const ws5 = parseFloat(document.getElementById(ws5Id).value) || 0;
+        const luister5 = parseFloat(document.getElementById(luister5Id).value) || 0;
+        const lezen5 = parseFloat(document.getElementById(lezen5Id).value) || 0;
+
+        // Kalkulasi sesuai aturan
+        const total = (ws5) + (luister5) + (lezen5) + (toets5Id) / 4;
+
+        // Tentukan hasil
+        let grade = "Lulus";
+        if (total < 55) {
+            grade = "Tidak Lulus (D)";
+        }
+
+        // Tampilkan hasil
+        document.getElementById(resultId).innerHTML = `Total: ${total.toFixed(2)} (${grade})`;
+    }
+</script>
+</body>
+</html>
