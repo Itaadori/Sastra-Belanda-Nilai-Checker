@@ -233,7 +233,7 @@
         const lezen5 = parseFloat(document.getElementById(lezen5Id).value) || 0;
         const toets5 = parseFloat(document.getElementById(toets5Id).value) || 0;
         // Kalkulasi sesuai aturan
-        const total = (ws5) + (luister5) + (lezen5) + (toets5) / 4;
+        const total = (ws5 + luister5 + lezen5 + toets5) / 4;
 
         // Tentukan hasil
         let grade = "Lulus";
