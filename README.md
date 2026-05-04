@@ -1,6 +1,6 @@
 # 🇳🇱 Sastra Belanda Nilai Checker
 
-Alat bantu hitung IPK/Nilai khusus mahasiswa Sastra Belanda UI/UGM/Unpad (sesuaikan kampusmu).
+Alat bantu hitung IPK/Nilai khusus mahasiswa Sastra Belanda UI.
 
 ## ⚠️ Masalah
 Mahasiswa sering salah hitung IPK karena bingung bobot mata kuliah "Grammar Dutch I" vs "Literature II". Salah hitung = SKS semester depan berantakan.
